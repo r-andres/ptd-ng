@@ -1,0 +1,67 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v3.1.187496374)
+
+newmtl Conexion_Panel_S
+Kd 0.701961 0.701961 0.701961
+Ka 0.701961 0.701961 0.701961
+Ks 0.952941 0.952941 0.952941
+Ke 0 0 0
+d 1
+Ns 100
+illum 2
+
+newmtl Material #26
+Kd 0.713726 0.713726 0.713726
+Ka 0.713726 0.713726 0.713726
+Ks 0.952941 0.952941 0.952941
+Ke 0 0 0
+d 1
+Ns 69
+illum 2
+
+newmtl Cuerpo_Plata
+Kd 0.784314 0.784314 0.784314
+Ka 0.784314 0.784314 0.784314
+Ks 0.952941 0.952941 0.952941
+Ke 0 0 0
+d 1
+Ns 75
+illum 2
+map_Kd silver.jpg
+
+newmtl Material #83
+Kd 0.945098 0.870588 0.564706
+Ka 0.945098 0.870588 0.564706
+Ks 0.952941 0.952941 0.952941
+Ke 0 0 0
+d 1
+Ns 54
+illum 2
+
+newmtl Blanco
+Kd 0.968627 0.968627 0.968627
+Ka 0.968627 0.968627 0.968627
+Ks 0.952941 0.952941 0.952941
+Ke 0 0 0
+d 1
+Ns 78
+illum 2
+
+newmtl Material #84
+Kd 0.643137 0.643137 0.643137
+Ka 0.643137 0.643137 0.643137
+Ks 0.952941 0.952941 0.952941
+Ke 0 0 0
+d 1
+illum 1
+
+newmtl Solar Panel
+Kd 0.603922 0.603922 0.603922
+Ka 0.603922 0.603922 0.603922
+Ks 0.952941 0.952941 0.952941
+Ke 0 0 0
+d 1
+Ns 100
+illum 2
+map_Kd solarpm.jpg
+
