@@ -25,14 +25,12 @@ export class ThreeViewerComponent implements AfterViewInit, OnDestroy {
     });
   }
 
-
   ngOnDestroy(): void {
     this.observer.unobserve(this.el.nativeElement);
   }
   
   ngAfterViewInit(): void {
 
-    
     this.init();
     this.observer.observe(this.el.nativeElement);
   }
@@ -56,7 +54,6 @@ export class ThreeViewerComponent implements AfterViewInit, OnDestroy {
     this.light = new THREE.AmbientLight(0xffffff); // soft white light
     this.scene.add(this.light);
 
-    
 
     this.renderer = new THREE.WebGLRenderer({ antialias: true, logarithmicDepthBuffer: true });
     this.renderer.setSize(width, height);
@@ -65,7 +62,6 @@ export class ThreeViewerComponent implements AfterViewInit, OnDestroy {
     this.controls = new OrbitControls( this.camera, this.renderer.domElement );
     element.appendChild(this.renderer.domElement);
 
-    
   }
 
 
