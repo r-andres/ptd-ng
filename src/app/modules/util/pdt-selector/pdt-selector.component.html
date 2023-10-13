@@ -1,0 +1,8 @@
+<div>
+{{label}}
+<select
+ class="mt-3"
+>
+<option *ngFor="let variant of options" [value]="variant.value">{{variant.label}}</option>
+</select>
+</div>

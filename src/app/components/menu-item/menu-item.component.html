@@ -6,7 +6,7 @@
     <i class="nav-icon {{ menuItem.iconClasses }}"></i>
     <p>{{ menuItem.name }}
         <i
-            *ngIf="isExpandable && menuItem.children.length > 0"
+            *ngIf="isExpandable && (menuItem.children.length > 0 || menuItem.checks.length > 0)"
             class="right fas fa-angle-right"
             [@rotate]="isMenuExtended"
         ></i>
@@ -22,5 +22,10 @@
             <i class="nav-icon {{ item.iconClasses }}"></i>
             <p>{{ item.name }}</p>
         </a>
+    </li>
+</ul>
+<ul class="nav nav-treeview" *ngFor="let item of menuItem.checks" [@openClose]="isMenuExtended">
+    <li class="nav-item">
+        <input type="checkbox" [value]="item.value"/><p>{{ item.name }}</p>
     </li>
 </ul>

@@ -1,4 +1,5 @@
 
+import { GraphContext } from '@/model/graph-context';
 import * as THREE from 'three';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
@@ -8,14 +9,14 @@ export class JuiceLoader {
 
     private spacecraft: Spacecraft;
 
-    constructor(scene, objfilename) {
+    constructor(graphContext: GraphContext, filename: string) {
 
 
         const mtlLoader = new MTLLoader();
 
         mtlLoader.setPath('assets/model/');
 
-        mtlLoader.load(objfilename + '.mtl', (materials) => {
+        mtlLoader.load(filename + '.mtl', (materials) => {
             materials.preload();
             const loader = new OBJLoader();
             loader.setMaterials(materials);
@@ -23,7 +24,7 @@ export class JuiceLoader {
 
             // load a resource
             loader.load(
-                objfilename,
+                filename,
                 // Function when resource is loaded
                 (shape) => {
                     const rotY = new THREE.Quaternion();
@@ -36,7 +37,7 @@ export class JuiceLoader {
                     const scale = 1E-3;
                     shape.scale.set(scale, scale, scale);
                     this.spacecraft = new Spacecraft(shape, rotZ);
-                    scene.add(shape);
+                    graphContext.scene.add(shape);
 
                 }
             );

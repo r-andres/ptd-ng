@@ -43,8 +43,8 @@ export const MENU = [
         path: ['/blank']
     },
     {
-        name: 'Three Viewer',
-        iconClasses: 'fas fa-file',
+        name: 'Spacecraft View',
+        iconClasses: 'fas fa-rocket',
         path: ['/three-viewer']
     },
     {

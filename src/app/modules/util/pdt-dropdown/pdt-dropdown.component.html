@@ -1,0 +1,9 @@
+<div class="dropdown">
+<div (click)="toggle()">
+    <ng-content  select="[button]" ></ng-content>
+</div>
+<div *ngIf="expanded" class="dropdown-content">
+    <ng-content select="[menu]"></ng-content>
+</div>
+</div>
+

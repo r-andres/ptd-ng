@@ -21,8 +21,6 @@ import {NotificationsComponent} from '@modules/main/header/notifications/notific
 
 import {registerLocaleData} from '@angular/common';
 import localeEn from '@angular/common/locales/en';
-import {UserComponent} from '@modules/main/header/user/user.component';
-import {LanguageComponent} from '@modules/main/header/language/language.component';
 import {MainMenuComponent} from './pages/main-menu/main-menu.component';
 import {SubMenuComponent} from './pages/main-menu/sub-menu/sub-menu.component';
 import {MenuItemComponent} from './components/menu-item/menu-item.component';
@@ -30,12 +28,14 @@ import {ControlSidebarComponent} from './modules/main/control-sidebar/control-si
 import {StoreModule} from '@ngrx/store';
 import {authReducer} from './store/auth/reducer';
 import {uiReducer} from './store/ui/reducer';
-import {ProfabricComponentsModule} from '@profabric/angular-components';
-import {defineCustomElements} from '@profabric/web-components/loader';
+
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
 import { ThreeViewerComponent } from './pages/three-viewer/three-viewer.component';
+import { PdtSelectorComponent } from './modules/util/pdt-selector/pdt-selector.component';
+import { PdtCheckboxComponent } from './modules/util/pdt-checkbox/pdt-checkbox.component';
+import { PdtDropdownComponent } from './modules/util/pdt-dropdown/pdt-dropdown.component';
 
-defineCustomElements();
+
 registerLocaleData(localeEn, 'en-EN');
 
 @NgModule({
@@ -50,14 +50,15 @@ registerLocaleData(localeEn, 'en-EN');
         DashboardComponent,
         MessagesComponent,
         NotificationsComponent,
-        UserComponent,
-        LanguageComponent,
         MainMenuComponent,
         SubMenuComponent,
         MenuItemComponent,
         ControlSidebarComponent,
         SidebarSearchComponent,
-        ThreeViewerComponent
+        ThreeViewerComponent,
+        PdtSelectorComponent,
+        PdtCheckboxComponent,
+        PdtDropdownComponent
     ],
     imports: [
         BrowserModule,
@@ -70,8 +71,7 @@ registerLocaleData(localeEn, 'en-EN');
             timeOut: 3000,
             positionClass: 'toast-top-right',
             preventDuplicates: true
-        }),
-        ProfabricComponentsModule
+        })
     ],
     providers: [],
     bootstrap: [AppComponent]

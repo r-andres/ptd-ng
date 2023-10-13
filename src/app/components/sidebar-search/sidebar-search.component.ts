@@ -6,7 +6,8 @@ import {
     ViewChild
 } from '@angular/core';
 import {MENU} from '@modules/main/menu-sidebar/menu-sidebar.component';
-import {PfDropdown} from '@profabric/angular-components';
+import { PdtDropdownComponent } from '@modules/util/pdt-dropdown/pdt-dropdown.component';
+
 
 @Component({
     selector: 'app-sidebar-search',
@@ -16,7 +17,7 @@ import {PfDropdown} from '@profabric/angular-components';
 export class SidebarSearchComponent implements OnInit {
     public searchText: string = '';
     public foundMenuItems = [];
-    @ViewChild('dropdown') dropdown: PfDropdown;
+    @ViewChild('dropdown') dropdown: PdtDropdownComponent;
 
     constructor() {}
 
@@ -31,18 +32,18 @@ export class SidebarSearchComponent implements OnInit {
             return;
         } else {
             this.searchText = '';
-            this.dropdown.isOpen = false;
+            this.dropdown.expanded = false;
         }
     }
 
     handleIconClick() {
         this.searchText = '';
-        this.dropdown.isOpen = false;
+        this.dropdown.expanded = false;
     }
 
     handleMenuItemClick() {
         this.searchText = '';
-        this.dropdown.isOpen = false;
+        this.dropdown.expanded = false;
     }
 
     findMenuItems(menu) {
@@ -65,7 +66,7 @@ export class SidebarSearchComponent implements OnInit {
         });
 
         if (this.foundMenuItems.length > 0) {
-            this.dropdown.isOpen = true;
+            this.dropdown.expanded = true;
         }
     }
 

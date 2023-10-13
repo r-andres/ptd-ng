@@ -22,11 +22,12 @@ export class MenuItemComponent implements OnInit {
     ngOnInit(): void {
         if (
             this.menuItem &&
-            this.menuItem.children &&
-            this.menuItem.children.length > 0
+            (this.menuItem.children &&
+            this.menuItem.children.length > 0)
         ) {
             this.isExpandable = true;
         }
+
         this.calculateIsActive(this.router.url);
         this.router.events
             .pipe(filter((event) => event instanceof NavigationEnd))
