@@ -27,6 +27,7 @@ export class ThreeViewerComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.observer.unobserve(this.el.nativeElement);
+    this.renderer.setAnimationLoop(null);
   }
   
   ngAfterViewInit(): void {
@@ -78,6 +79,7 @@ export class ThreeViewerComponent implements AfterViewInit, OnDestroy {
 
    animation( time ) {
     this.renderer.render( this.scene, this.camera );
+    console.log(time);
   }
 
 
