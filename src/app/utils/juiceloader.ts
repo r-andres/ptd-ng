@@ -1,5 +1,5 @@
 
-import { GraphContext } from '@/model/graph-context';
+import { GraphContext } from '@/model/common/graph-context';
 import * as THREE from 'three';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';

@@ -7,12 +7,12 @@ export class GraphContext {
     camera: THREE.PerspectiveCamera;
     renderer: THREE.WebGLRenderer;
     document: any;
-    element: any;
+    element: HTMLDivElement;
     state: number[];
 
 
     constructor(document,
-        element,
+        element: HTMLDivElement,
         renderer: THREE.WebGLRenderer,
         scene: THREE.Scene,
         camera: THREE.PerspectiveCamera) {
@@ -28,9 +28,9 @@ export class GraphContext {
 
     private getElementState() {
         return [
-            this.element.nativeElement.offsetLeft,
-            this.element.nativeElement.clientWidth,
-            this.element.nativeElement.clientHeight
+            this.element.offsetLeft,
+            this.element.clientWidth,
+            this.element.clientHeight
         ]
     }
 
@@ -57,7 +57,7 @@ export class GraphContext {
 
     resize() {
 
-        const footerHeaderHeights = 101; // pixels
+        const footerHeaderHeights = 120; // pixels
         const height = window.innerHeight - footerHeaderHeights;
         const width = this.element.clientWidth;
         this.camera.aspect = width / height;
